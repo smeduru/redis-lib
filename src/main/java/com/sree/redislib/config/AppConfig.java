@@ -45,6 +45,7 @@ public class AppConfig {
     }
 
     @Bean
+    @Primary
     CacheErrorHandler cacheErrorHandler() {
         return new CacheErrorHandlerRedis();
     }
