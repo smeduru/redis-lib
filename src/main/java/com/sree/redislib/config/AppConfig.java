@@ -2,6 +2,7 @@ package com.sree.redislib.config;
 
 import com.sree.redislib.model.Person;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.interceptor.CacheErrorHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -41,6 +42,11 @@ public class AppConfig {
         RedisSerializationContext<String, Person> context = builder.value(serializer).build();
 
         return new ReactiveRedisTemplate<>(factory, context);
+    }
+
+    @Bean
+    CacheErrorHandler cacheErrorHandler() {
+        return new CacheErrorHandlerRedis();
     }
 
     /*@PreDestroy
