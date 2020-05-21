@@ -3,3 +3,4 @@
 * Created a redis lib using _spring-boot-starter-data-redis-reactive_
 * Used _embedded-redis_ to write integration tests
 * Please check _RedisLibTest_ class for more details on the integration tests
+* Implemented _CacheErrorHandler_ to return null values in case of redis failure
